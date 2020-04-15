@@ -1,0 +1,26 @@
+         CLIPS (6.31 6/12/19)
+CLIPS> (deffunction primo (?entrada)
+    (if 
+        (< ?entrada 2) then
+         (printout t " El numero no es primo " crlf)
+	 (return False)
+         
+    )
+    (loop-for-count( ?i 2 (- ?entrada 1)) do
+        (if 
+            (= (mod ?entrada ?i) 0) then
+            (printout t " El numero no es primo  " crlf)
+	    (return False)
+            
+        )    
+    )
+    (printout t " El numero es primo " crlf)
+    (return True)
+)
+CLIPS> (printout t "" (primo 1) crlf)
+ El numero no es primo 
+False
+CLIPS> (printout t "" (primo 2) crlf)
+ El numero es primo 
+True
+CLIPS> 

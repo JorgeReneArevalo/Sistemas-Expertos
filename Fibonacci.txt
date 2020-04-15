@@ -1,0 +1,27 @@
+         CLIPS (6.31 6/12/19)
+CLIPS> (deffunction fibo (?entrada)
+(if (< ?entrada 2) then
+?entrada
+else
+(+ (fibo(- ?entrada 1)) (fibo(- ?entrada 2)))
+)
+)
+CLIPS> (bind ?numero 10)
+10
+CLIPS> (printout t "La serie Fibonacci es:" crlf
+(loop-for-count( ?cont 0 (- ?numero 1)) do
+	(printout t "" (fibo ?cont) crlf)
+)
+)
+La serie Fibonacci es:
+0
+1
+1
+2
+3
+5
+8
+13
+21
+34
+FALSECLIPS> 
